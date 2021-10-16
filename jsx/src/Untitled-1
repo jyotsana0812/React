@@ -1,0 +1,18 @@
+// reverse string using recursion
+
+function reverse(str){
+    var length = str.length;
+    if(str == ""){
+        return "";
+    }
+    return str[length-1] + reverse(str.slice(0,length-1))
+}
+
+var a = reverse('hello');
+console.log(a);
+
+// ashu  => reverse('shu') + a => revser('hu') + 's' + 'a'
+    // a + 'shu'
+        // 's' + 'hu'
+            // 'h' + 'u'
+                    // 

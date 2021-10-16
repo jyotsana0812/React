@@ -1,0 +1,42 @@
+class Stack {
+    constructor(){
+        this.arr = [];
+        this.top = -1;
+    }
+    push(item){
+        this.top =  this.top+1;
+        this.arr.push(item);
+    }
+    pop(){
+        if( this.top  === -1){
+            return false;
+        }
+        this.top =  this.top-1;
+        return this.arr.pop();
+    }
+    getSize(){
+        return this.top+1;
+    }
+}
+
+var stack = new Stack();
+var arr = [4,3,2,1];
+for(var i = 0 ;i< arr.length ; i++){
+    stack.push(arr[i]);
+}
+console.log(stack);
+
+
+
+var reversedStack = new Stack()
+function reverse(stack){
+    // base condition
+
+    if(stack.getSize() == 0){
+        return ;
+    }
+    var top = stack.pop();
+    return reversedStack.push(top) + reverse(stack);
+}
+
+var b = reverse(stack);
